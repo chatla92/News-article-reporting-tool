@@ -1,6 +1,8 @@
 # Log Analysis Report
 
 ## Problem 1:
+What are the most popular three articles of all time? Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top.
+
 * Data is cleansed by removing entries with paths such as ```/```, ```/+++ATH0```, ```/spam-spam-spam-humbug``` and also
   by removing entries whose state is ```404 NOT FOUND```. Store these values in table `clean_log`
 * Replace the path values of each entry in clean_log with its corresponding slug values using `regexp_repalce`
@@ -8,9 +10,13 @@
 * Group the above table by `title`
     
 ## Problem 2:
+2. Who are the most popular article authors of all time? That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.
+
 * Use the table/view from step 3 of problem1 and join with `authors` and `group by author name`
      
 ## Problem 3:
+On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser. (Refer back to this lesson if you want to review the idea of HTTP status codes.)
+
 * Create a table/view to find total num of requests per day
 * Create a table/view to find number of error requests per day
 * Join the above two tables/views on date and calculate percentage of errors for each day. Select the days with more than 1% error
