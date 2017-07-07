@@ -33,6 +33,11 @@ On which days did more than 1% of requests lead to errors? The log table include
 `update clean_log set path = regexp_replace(path, '/article/(.*)', '\1', 'g');`
 
 ###     Views:
+If news database id not creted than run the following commands after unzipping newsdata.zip
+    `su postgres -c 'createuser -dRS ubuntu'`
+    `su ubuntu -c 'createdb news'`
+    `su ubuntu -c 'psql news -f /path/to/newsdata.sql'`
+    
 * **article_log_join**: This view is a join on `articles` and `clean_log` tables.
 *Creating view*:
 `create view article_log_join as select articles.title, articles.author from articles join clean_log on articles.slug=clean_log.path;`
@@ -55,4 +60,3 @@ On which days did more than 1% of requests lead to errors? The log table include
 Pass the name of the database with author, articles and log table as an argument. 
 For a database named "news", run the code as below
     `./newsdatadb.py news`.
-    
