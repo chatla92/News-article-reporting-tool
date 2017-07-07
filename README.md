@@ -10,7 +10,7 @@ What are the most popular three articles of all time? Which articles have been a
 * Group the above table by `title`
     
 ## Problem 2:
-2. Who are the most popular article authors of all time? That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.
+Who are the most popular article authors of all time? That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.
 
 * Use the table/view from step 3 of problem1 and join with `authors` and `group by author name`
      
